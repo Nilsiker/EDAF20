@@ -203,28 +203,6 @@ Show</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>819</x>
-      <y>624</y>
-      <w>130</w>
-      <h>39</h>
-    </coordinates>
-    <panel_attributes>movieName*</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>689</x>
-      <y>468</y>
-      <w>130</w>
-      <h>39</h>
-    </coordinates>
-    <panel_attributes>_movieName*_</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLUseCase</id>
-    <coordinates>
       <x>702</x>
       <y>390</y>
       <w>117</w>
@@ -269,28 +247,6 @@ Show</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>611</x>
-      <y>455</y>
-      <w>104</w>
-      <h>65</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>60.0;30.0;10.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>767</x>
-      <y>611</y>
-      <w>78</w>
-      <h>52</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>40.0;20.0;10.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
       <x>728</x>
       <y>650</y>
       <w>78</w>
@@ -298,28 +254,6 @@ Show</panel_attributes>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>40.0;60.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>702</x>
-      <y>546</y>
-      <w>117</w>
-      <h>39</h>
-    </coordinates>
-    <panel_attributes>date*</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>702</x>
-      <y>572</y>
-      <w>91</w>
-      <h>78</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>50.0;10.0;10.0;40.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -377,28 +311,6 @@ m2=*
 shows
 </panel_attributes>
     <additional_attributes>10.0;10.0;50.0;130.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>546</x>
-      <y>390</y>
-      <w>130</w>
-      <h>39</h>
-    </coordinates>
-    <panel_attributes>theaterName*</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>559</x>
-      <y>416</y>
-      <w>52</w>
-      <h>78</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;40.0;20.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
