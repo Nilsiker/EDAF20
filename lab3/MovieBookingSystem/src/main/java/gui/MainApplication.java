@@ -24,7 +24,7 @@ public class MainApplication extends Application {
 		try {
 			
 			// BorderPane root = new BorderPane();
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/TopTab.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/topTab.fxml"));
 			Parent root = loader.load();
 			
 			Scene scene = new Scene(root,600,440);
