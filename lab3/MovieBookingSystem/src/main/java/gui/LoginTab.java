@@ -31,17 +31,14 @@ public class LoginTab {
         } else {
             String uname = username.getText();
             
-            /* --- TODO: add code to query the database credentials --- */
-        	// could be if(!db.login(uname)) alert...
-
-        	// inform the user that there is no check against the database
-	        Alert alert = new Alert(AlertType.INFORMATION);
-	        alert.setTitle("Login fail");
-	        alert.setHeaderText(null);
-	        alert.setContentText("No user check implemented yet!");
-	        alert.showAndWait();
-	        /* --- END TODO --- */
-	        
+            if(!db.login(uname)) {
+            	Alert alert = new Alert(AlertType.INFORMATION);
+    	        alert.setTitle("Login fail");
+    	        alert.setHeaderText(null);
+    	        alert.setContentText("That name isn't a registered username! Contact the system administrator!");
+    	        alert.showAndWait();	
+            }
+  
             // setting the user name
 	        CurrentUser.instance().loginAs(uname);
 	        

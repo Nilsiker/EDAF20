@@ -92,14 +92,7 @@ public class BookingTab {
 	}
 	
 	private void fillNamesList() {
-		List<String> allmovies = new ArrayList<String>();
-		
-		// query the database via db
-		/* --- TODO: replace with own code --- */
-		allmovies.add("Pulp Fiction");
-		allmovies.add("The Big Lebowski");
-		allmovies.add("Whiplash");
-		/* --- END TODO --- */		
+		List<String> allmovies = db.getAllMovies();
 		
 		moviesList.setItems(FXCollections.observableList(allmovies));
 		// remove any selection
@@ -109,11 +102,7 @@ public class BookingTab {
 	private void fillDatesList(String m) {
 		List<String> alldates = new ArrayList<String>();
 		if(m!=null) {
-			// query the database via db
-			/* --- TODO: replace with own code --- */
-			alldates.add("2016-02-01");
-			alldates.add("2016-01-15");
-			/* --- END TODO --- */			
+			alldates = db.getDates(m);	
 		}
 		datesList.setItems(FXCollections.observableList(alldates));
 		// remove any selection
@@ -142,5 +131,4 @@ public class BookingTab {
 		fillDatesList(null);
 		fillShow(null,null);
 	}
-	
 }

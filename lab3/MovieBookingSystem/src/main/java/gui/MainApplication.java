@@ -40,8 +40,7 @@ public class MainApplication extends Application {
 			primaryStage.show();
 			
 			// opening database connection
-	        /* --- TODO: change xxx to your user name, yyy to your password --- */	        
-	        if(!db.openConnection("xxx", "yyy")) {
+	        if(!db.openConnection("hbg15", "rjr595rg")) {
 	            Alert alert = new Alert(AlertType.ERROR);
 	            alert.setTitle("Database error");
 	            alert.setHeaderText(null);

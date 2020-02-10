@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import datamodel.Reservation;
+import datamodel.CurrentUser;
 import datamodel.Database;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
@@ -55,10 +56,9 @@ public class ReservationsTab {
 	 * Refresh the table view, by getting and replacing the tables content.
 	 */
 	public void updateList() {
-		/* --- TODO: replace with own code using the database object instead --- */
 		System.out.println("Update booking list called.");
 		
-		List<Reservation> bookings = Arrays.asList(new Reservation(1, "Star Wars", "2019-12-30", "Bio Söder"));
+		List<Reservation> bookings = db.getReservations(CurrentUser.instance().getCurrentUserId());
 		tableReservations.getItems().setAll(bookings);
 	}
 }
