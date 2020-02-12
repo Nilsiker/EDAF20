@@ -83,7 +83,12 @@ public class Database {
 
 		try {
 			System.out.println(mTitle + "   " + mDate);
-			query = conn.prepareStatement("SELECT * FROM Shows INNER JOIN Theaters ON Theaters.name = Shows.theaterName WHERE movieName= ? and showDate= ?");
+			query = conn.prepareStatement("SELECT name, nbrOfSeats, count(name) FROM Shows "
+					+ "INNER JOIN Theaters "
+					+ "ON Theaters.name = Shows.theaterName "
+					+ "INNER JOIN Reservations"
+					+ "ON Theaters."	// TODO fix
+					+ "WHERE movieName= ? and showDate= ?");
 			query.setString(1, mTitle);
 			query.setString(2, mDate);
 			result = query.executeQuery();
