@@ -83,18 +83,20 @@ public class Database {
 
 		try {
 			System.out.println(mTitle + "   " + mDate);
-			query = conn.prepareStatement("SELECT name, nbrOfSeats, count(name) FROM Shows "
+			query = conn.prepareStatement("SELECT name, nbrOfSeats, count(*) FROM Shows "
 					+ "INNER JOIN Theaters "
 					+ "ON Theaters.name = Shows.theaterName "
-					+ "INNER JOIN Reservations"
-					+ "ON Theaters."	// TODO fix
-					+ "WHERE movieName= ? and showDate= ?");
+					+ "INNER JOIN Reservations "
+					+ "ON Reservations.movieName = Shows.movieName and Shows.showDate = Reservations.showDate "
+					+ "WHERE Shows.movieName= ? and Shows.showDate= ? ");
 			query.setString(1, mTitle);
 			query.setString(2, mDate);
 			result = query.executeQuery();
-			result.next();
-			mVenue = result.getString("name");	
-			mFreeSeats = result.getInt("nbrOfSeats");	// TODO make it subtract already booked count!
+			if(result.next()) {
+				mVenue = result.getString("name");	
+				mFreeSeats = result.getInt("nbrOfSeats") - result.getInt("count(*)");								
+			}
+
 		} catch (SQLException e) {
 			System.out.println("The getShowData query didn't work out as intended...");
 			e.printStackTrace();
@@ -165,6 +167,25 @@ public class Database {
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;
+		}
+	}
+	
+	public int book(Show show) {
+		try {
+			PreparedStatement query = conn.prepareStatement("INSERT INTO Reservations VALUES (null, ?, ?, ?)");
+			query.setString(1, CurrentUser.instance().getCurrentUserId());
+			query.setString(2, show.getTitle());
+			query.setString(3, show.getDate());
+			query.executeUpdate();
+			ResultSet rs = conn.prepareStatement("SELECT reservationId FROM Reservations").executeQuery();
+			if(rs.last()) {
+				return rs.getInt("reservationId");				
+			} else {
+				return -1;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return -1;
 		}
 	}
 }

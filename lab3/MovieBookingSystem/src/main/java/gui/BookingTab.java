@@ -4,6 +4,8 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 
@@ -11,6 +13,7 @@ import java.util.List;
 
 import datamodel.CurrentUser;
 import datamodel.Database;
+import datamodel.Reservation;
 import datamodel.Show;
 
 import java.util.ArrayList;
@@ -57,7 +60,7 @@ public class BookingTab {
 					// need to update the details according to the selected date
 					String movie = moviesList.getSelectionModel().getSelectedItem();
 					String date = newV;
-				    fillShow(movie, date);
+				    if (movie != null && date != null) fillShow(movie, date);
 				});
 
 		// set up booking button listener
@@ -67,10 +70,19 @@ public class BookingTab {
 				(event) -> {
 					String movie = moviesList.getSelectionModel().getSelectedItem();
 					String date = datesList.getSelectionModel().getSelectedItem();
-					/* --- TODO: should attempt to book a ticket via the database --- */
-					/* --- do not forget to report booking number! --- */
-					/* --- update the displayed details (free seats) --- */
-					report("Booked one ticket to "+movie+" on "+date);
+					Show show = db.getShowData(movie, date);
+					if(show.getSeats() < 1) {
+						report("Sorry, no tickets left!");
+						Alert a = new Alert(AlertType.ERROR, "Sorry, no more tickets!", null);
+						a.showAndWait();
+					} else {
+						int id = db.book(show);
+						/* --- TODO: should attempt to book a ticket via the database --- */
+						/* --- do not forget to report booking number! --- */
+						/* --- update the displayed details (free seats) --- */
+						fillShow(movie, date);
+						report("Booked one ticket to "+movie+" on "+date + " with booking number " + id);	
+					}
 				});
 		
 		report("Ready.");
