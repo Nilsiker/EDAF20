@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>430</x>
-      <y>220</y>
+      <x>690</x>
+      <y>330</y>
       <w>100</w>
       <h>50</h>
     </coordinates>
@@ -17,8 +17,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>220</x>
-      <y>220</y>
+      <x>480</x>
+      <y>330</y>
       <w>100</w>
       <h>50</h>
     </coordinates>
@@ -30,8 +30,8 @@ _type_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>220</y>
+      <x>260</x>
+      <y>330</y>
       <w>100</w>
       <h>50</h>
     </coordinates>
@@ -43,8 +43,8 @@ _id_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>290</x>
-      <y>330</y>
+      <x>550</x>
+      <y>440</y>
       <w>100</w>
       <h>50</h>
     </coordinates>
@@ -56,8 +56,8 @@ _id_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>90</x>
-      <y>230</y>
+      <x>350</x>
+      <y>340</y>
       <w>150</w>
       <h>50</h>
     </coordinates>
@@ -70,8 +70,8 @@ has &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>310</x>
-      <y>230</y>
+      <x>570</x>
+      <y>340</y>
       <w>140</w>
       <h>50</h>
     </coordinates>
@@ -84,8 +84,8 @@ has &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>380</x>
-      <y>260</y>
+      <x>640</x>
+      <y>370</y>
       <w>120</w>
       <h>130</h>
     </coordinates>
@@ -94,5 +94,22 @@ m1=*
 m2=*
 &lt; has</panel_attributes>
     <additional_attributes>10.0;100.0;100.0;100.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>260</x>
+      <y>130</y>
+      <w>310</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>bg=yellow
+*_Relationer:_*
+Pallets(id, cookie, customer, productionDate)
+Cookies(type, recipeId)
+Recipes(id)
+RawMaterials(name)
+Ingredients(id, name)</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
