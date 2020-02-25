@@ -125,9 +125,8 @@ public class Database {
 		try {
 			Statement query = conn.createStatement();
 			ResultSet movies = query.executeQuery("SELECT name FROM Movies");
-			;
 			while (movies.next()) {
-				list.add(movies.getString(1));
+				list.add(movies.getString("name"));
 			}
 			return list;
 		} catch (SQLException e) {
@@ -172,20 +171,26 @@ public class Database {
 	
 	public int book(Show show) {
 		try {
-			PreparedStatement query = conn.prepareStatement("INSERT INTO Reservations VALUES (null, ?, ?, ?)");
+			PreparedStatement query = conn.prepareStatement("INSERT INTO Reservations VALUES (null, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
 			query.setString(1, CurrentUser.instance().getCurrentUserId());
 			query.setString(2, show.getTitle());
 			query.setString(3, show.getDate());
-			query.executeUpdate();
-			ResultSet rs = conn.prepareStatement("SELECT reservationId FROM Reservations").executeQuery();
+			if(query.executeUpdate() > 0) {
+				ResultSet rs = query.getGeneratedKeys();
+				if(rs.next()) {
+					return rs.getInt(1);
+				}
+			}
+			/*ResultSet rs = conn.prepareStatement("SELECT reservationId FROM Reservations").executeQuery();
 			if(rs.last()) {
 				return rs.getInt("reservationId");				
 			} else {
 				return -1;
-			}
+			}*/
 		} catch (SQLException e) {
 			e.printStackTrace();
-			return -1;
 		}
+		
+		return -1;
 	}
 }

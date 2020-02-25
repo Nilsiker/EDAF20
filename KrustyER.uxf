@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="14.3.0">
-  <zoom_level>10</zoom_level>
+<diagram program="umlet" version="13.3">
+  <zoom_level>17</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>690</x>
-      <y>330</y>
-      <w>100</w>
-      <h>50</h>
+      <x>1156</x>
+      <y>289</y>
+      <w>170</w>
+      <h>187</h>
     </coordinates>
-    <panel_attributes>Recipe
+    <panel_attributes>&lt;&lt;weak&gt;&gt;
+Recipe
 --
+_cookieType_
+_rawMaterial_
+amount
+unit
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>480</x>
-      <y>330</y>
-      <w>100</w>
-      <h>50</h>
+      <x>799</x>
+      <y>391</y>
+      <w>170</w>
+      <h>85</h>
     </coordinates>
     <panel_attributes>Cookie
 --
@@ -30,50 +35,40 @@ _type_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>260</x>
-      <y>330</y>
-      <w>100</w>
-      <h>50</h>
+      <x>391</x>
+      <y>391</y>
+      <w>204</w>
+      <h>170</h>
     </coordinates>
     <panel_attributes>Pallet
 --
-_id_</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>550</x>
-      <y>440</y>
-      <w>100</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>Raw material
---
-</panel_attributes>
+_id_
+
+productionDate
+blocked</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>350</x>
-      <y>340</y>
-      <w>150</w>
-      <h>50</h>
+      <x>578</x>
+      <y>408</y>
+      <w>255</w>
+      <h>85</h>
     </coordinates>
     <panel_attributes>lt=-
-m1=*
+m1=0..*
 m2=5400
-has &gt;</panel_attributes>
+contains &gt;</panel_attributes>
     <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>570</x>
-      <y>340</y>
-      <w>140</w>
-      <h>50</h>
+      <x>952</x>
+      <y>408</y>
+      <w>238</w>
+      <h>85</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
@@ -84,32 +79,77 @@ has &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>640</x>
-      <y>370</y>
-      <w>120</w>
-      <h>130</h>
+      <x>952</x>
+      <y>459</y>
+      <w>357</w>
+      <h>221</h>
     </coordinates>
     <panel_attributes>lt=-
-m1=*
-m2=*
+m1=0..*
+m2=0..*
 &lt; has</panel_attributes>
-    <additional_attributes>10.0;100.0;100.0;100.0;100.0;10.0</additional_attributes>
+    <additional_attributes>10.0;100.0;170.0;100.0;170.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>260</x>
-      <y>130</y>
-      <w>310</w>
-      <h>170</h>
+      <x>459</x>
+      <y>34</y>
+      <w>578</w>
+      <h>289</h>
     </coordinates>
     <panel_attributes>bg=yellow
 *_Relationer:_*
-Pallets(id, cookie, customer, productionDate)
+Pallets(id, cookie, productionDate, blocked)
 Cookies(type, recipeId)
-Recipes(id)
-RawMaterials(name)
-Ingredients(id, name)</panel_attributes>
+Recipes(cookieType, rawMaterial, amount, unit)
+RawMaterials(name)</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>697</x>
+      <y>578</y>
+      <w>272</w>
+      <h>187</h>
+    </coordinates>
+    <panel_attributes>RawMaterial
+--
+_name_
+amount
+unit
+lastDeliveredAmount
+lastDeliveryDate</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>119</x>
+      <y>646</y>
+      <w>170</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>Customer
+--
+_name_
+address
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>272</x>
+      <y>544</y>
+      <w>272</w>
+      <h>221</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..1
+m2=0..*
+orders &gt;</panel_attributes>
+    <additional_attributes>10.0;100.0;120.0;100.0;120.0;10.0</additional_attributes>
   </element>
 </diagram>

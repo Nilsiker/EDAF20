@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>380</x>
+      <y>220</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>User</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>220</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Calendar</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>850</x>
+      <y>220</y>
+      <w>100</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Appointment
+--
+date
+start
+end
+description</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>850</x>
+      <y>510</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Reminder</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>470</x>
+      <y>210</y>
+      <w>210</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+has &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;190.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>750</x>
+      <y>210</y>
+      <w>120</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=*
+has &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;100.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>890</x>
+      <y>310</y>
+      <w>70</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+has &gt;</panel_attributes>
+    <additional_attributes>10.0;200.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

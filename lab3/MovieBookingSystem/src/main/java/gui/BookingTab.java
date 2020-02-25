@@ -74,6 +74,7 @@ public class BookingTab {
 					if(show.getSeats() < 1) {
 						report("Sorry, no tickets left!");
 						Alert a = new Alert(AlertType.ERROR, "Sorry, no more tickets!", null);
+						a.getDialogPane().setMinSize(40, 40);
 						a.showAndWait();
 					} else {
 						int id = db.book(show);
@@ -81,7 +82,7 @@ public class BookingTab {
 						/* --- do not forget to report booking number! --- */
 						/* --- update the displayed details (free seats) --- */
 						fillShow(movie, date);
-						report("Booked one ticket to "+movie+" on "+date + " with booking number " + id);	
+						report("Booked one ticket to "+movie+" \non "+date + " with booking number " + id);	
 					}
 				});
 		
